@@ -1,15 +1,15 @@
 package com.tomluk.entities;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
 public class EntitiesTest {
 
     private Entity<TestGameObject> entity;
-    private Entities entities = Entities.Instance;
+    private final Entities entities = Entities.Instance;
 
     @Before
     public void setUp() {

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Entity<GAME_OBJECT> {
 
-    private List<Component<GAME_OBJECT>> components;
+    private final List<Component<GAME_OBJECT>> components;
     private final GAME_OBJECT gameObject;
 
     public Entity(GAME_OBJECT gameObject) {

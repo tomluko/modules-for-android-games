@@ -4,12 +4,13 @@ import java.util.Objects;
 
 public class Vector2f {
 
-    public static Vector2f ZERO = of(0f, 0f);
-    public static Vector2f ONE = of(1f, 1f);
-    public static Vector2f X = of(1f, 0f);
-    public static Vector2f Y = of(0f, 1f);
+    public static final Vector2f ZERO = of(0f, 0f);
+    public static final Vector2f ONE = of(1f, 1f);
+    public static final Vector2f X = of(1f, 0f);
+    public static final Vector2f Y = of(0f, 1f);
 
-    private float x, y;
+    private final float x;
+    private final float y;
 
     public static Vector2f of(Vector2f vector) {
         return of(vector.x, vector.y);

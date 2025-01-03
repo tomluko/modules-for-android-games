@@ -1,5 +1,10 @@
 package com.tomluk.properties;
 
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertSame;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -7,8 +12,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-
-import static org.junit.Assert.*;
 
 public class ObservableListTest {
 
@@ -26,7 +29,7 @@ public class ObservableListTest {
     public void add() {
         list.add("a");
         assertEquals(1, list.size());
-        assertEquals("a", list.get(0));
+        assertEquals("a", list.getFirst());
         assertEquals(ObservableListChangeEvent.EventType.ADD, listener.event.getEventType());
         assertSame(list, listener.event.getSource());
         assertNull(listener.oldValue);

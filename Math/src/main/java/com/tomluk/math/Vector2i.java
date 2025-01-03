@@ -9,7 +9,8 @@ public class Vector2i {
     public static Vector2i X = of(1, 0);
     public static Vector2i Y = of(0, 1);
 
-    private int x, y;
+    private final int x;
+    private final int y;
 
     public static Vector2i of(Vector2i vector) {
         return of(vector.x, vector.y);

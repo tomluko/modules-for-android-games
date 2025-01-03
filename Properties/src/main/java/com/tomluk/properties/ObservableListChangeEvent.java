@@ -2,8 +2,8 @@ package com.tomluk.properties;
 
 public class ObservableListChangeEvent<TYPE> {
 
-    private ObservableList<TYPE> source;
-    private EventType eventType;
+    private final ObservableList<TYPE> source;
+    private final EventType eventType;
 
     ObservableListChangeEvent(ObservableList<TYPE> source, EventType eventType) {
         this.source = source;
@@ -21,6 +21,6 @@ public class ObservableListChangeEvent<TYPE> {
     enum EventType{
         ADD,
         REMOVE,
-        SET;
+        SET
     }
 }
