@@ -2,6 +2,7 @@ package com.tomluk.properties;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
@@ -44,18 +45,14 @@ class ObservableListImpl<TYPE> implements ObservableList<TYPE> {
 
     @Override
     public <T> T[] toArray(T[] ts) {
-        //noinspection SuspiciousToArrayCall
         return delegate.toArray(ts);
     }
 
-    @SuppressWarnings("ConstantConditions")
     @Override
     public boolean add(TYPE e) {
-        boolean added = delegate.add(e);
-        if (added) {
-            fireOnChangeEvent(new ObservableListChangeEvent<>(this, ObservableListChangeEvent.EventType.ADD), null, e);
-        }
-        return added;
+        delegate.add(e);
+        fireOnChangeEvent(new ObservableListChangeEvent<>(this, ObservableListChangeEvent.EventType.ADD), null, e);
+        return true;
     }
 
     @Override
@@ -70,7 +67,7 @@ class ObservableListImpl<TYPE> implements ObservableList<TYPE> {
 
     @Override
     public boolean containsAll(Collection<?> collection) {
-        return delegate.containsAll(collection);
+        return new HashSet<>(delegate).containsAll(collection);
     }
 
     @Override
